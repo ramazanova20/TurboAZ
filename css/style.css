@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#dekstopVersion{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+#mobileVersion{
+    display: none;
+}
+#dekstopVersion {
+    display: block; /* Show on larger screens */
+}
+}
