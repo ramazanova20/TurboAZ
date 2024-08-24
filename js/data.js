@@ -839,8 +839,8 @@ function show() {
     data.map((item) => {
         // item = country[i]
         cards.innerHTML += `
-                <div class="card w-[45%] md:w-[28%] lg:w-[23%] rounded-lg">
-                    <img class=" mx-auto h-[550px] object-cover" src="${item.images[0]}" alt="${item.brand} ${item.model}">
+                <div class="card w-[45%] h-45 rounded-lg ">
+                    <img class="w-full mx-auto h-[550px] object-cover" src="${item.images[0]}" alt="${item.brand} ${item.model}">
                 <div class="p-6">
                     <h2 class="text-xl font-bold text-gray-800">${item.brand} ${item.model}</h2>
                     <p class="text-gray-600">Model: ${item.model}</p>
