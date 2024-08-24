@@ -837,10 +837,9 @@ let data1 = [
       
   
       data1.map((item) => {
-          // item = country[i]
           cards1.innerHTML += `
                   <div class="card1 w-[45%] h-45 rounded-lg">
-                      <img class=""w-full object-cover h-[50%]" src="${item.images[0]}" alt="${item.brand} ${item.model}">
+                      <img class=""w-full object-cover h-[30%]" src="${item.images[0]}" alt="${item.brand} ${item.model}">
                   <div class="p-6">
                       <h2 class="text-xl font-bold text-gray-800">${item.brand} ${item.model}</h2>
                       <p class="text-gray-600">Model: ${item.model}</p>
