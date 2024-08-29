@@ -834,11 +834,9 @@ const cards = document.querySelector(".cards")
 
 
 function show() {
-    
-
     data.map((item) => {
         cards.innerHTML += `
-                <div class="card w-[45%] h-45 rounded-lg ">
+                <div class="card w-[45%] md:w-[30%] lg:w-[23%]  h-45 rounded-lg ">
                     <img class="w-full mx-auto h-[250px] object-cover" src="${item.images[0]}" alt="${item.brand} ${item.model}">
                 <div class="p-6">
                     <h2 class="text-xl font-bold text-gray-800">${item.brand} ${item.model}</h2>
@@ -854,4 +852,64 @@ function show() {
     })
 }
 show()
+
+const markaSet= new Set();
+const modelSet= new Set();
+
+for (let j = 0; j < data.length; j++) {
+  markaSet.add(data[j].brand);
+  modelSet.add(data[j].model);
+}
+
+const marka=Array.from(markaSet);
+const model=Array.from(modelSet);
+
+function addMarkaSelect(){
+  const markas = document.getElementById("markas")
+  markas.innerHTML = "";
+
+  const models = document.getElementById("models")
+  models.innerHTML = "";
+ 
+
+  // for (let j = 0; j < marka.length; j++) {
+  //   markas.innerHTML += `<option value="${marka[j]}"></option>`
+  //   models.innerHTML += `<option value="${model[j]}"></option>`
+    
+  // }
+  for (let j = 0; j < marka.length; j++) {
+    markas.innerHTML += `<option value="${marka[j]}">${marka[j]}</option>`;
+  }
+  
+  for (let j = 0; j < model.length; j++) {
+    models.innerHTML += `<option value="${model[j]}">${model[j]}</option>`;
+  }
+}
+addMarkaSelect();
+
+function getFullCards(carArg) {
+  let arr = carArg ? data.filter(item => item.brand === carArg) : data;
+
+  cards.innerHTML = ''
+  for (let j = 0; j < arr.length; j++) {
+    const item = arr[j];
+        cards.innerHTML += `
+        <div class="card w-[45%] md:w-[30%] lg:w-[23%]  h-45 rounded-lg ">
+            <img class="w-full mx-auto h-[250px] object-cover" src="${item.images[0]}" alt="${item.brand} ${item.model}">
+        <div class="p-6">
+            <h2 class="text-xl font-bold text-gray-800">${item.brand} ${item.model}</h2>
+            <p class="text-gray-600">Model: ${item.model}</p>
+            <p class="text-gray-600">Year: ${item.year}</p>
+            <p class="text-gray-600">Odometer: ${item.odometer} ${item.odometerUnit}</p>
+            <p class="text-gray-600">Engine: ${item.engine} L</p>
+            <p class="text-gray-600">Price: ${item.price} ${item.currency}</p>
+            <p class="text-gray-600">Location: ${item.city}</p>
+            <p class="text-gray-600">Type: ${item.banType}</p>
+        </div>
+        </div>`;
+      }
+}
+getFullCards('');
+
+
 

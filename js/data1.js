@@ -829,17 +829,12 @@ let data1 = [
     },
   ]
   
-  const cards1 = document.querySelector(".cards1")
-  
-  
-  
+  const cards1 = document.querySelector(".cards1")  
   function show() {
-      
-  
       data1.map((item) => {
           cards1.innerHTML += `
                   <div class="card1 w-[45%] h-45 rounded-lg">
-                      <img class=""w-full object-cover h-[30%]" src="${item.images[0]}" alt="${item.brand} ${item.model}">
+                      <img class=""w-full object-cover h-[3rtyuiop-[=\0%]" src="${item.images[0]}" alt="${item.brand} ${item.model}">
                   <div class="p-6">
                       <h2 class="text-xl font-bold text-gray-800">${item.brand} ${item.model}</h2>
                       <p class="text-gray-600">Model: ${item.model}</p>
